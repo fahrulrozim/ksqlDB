@@ -13,7 +13,7 @@ group by st.nameOrig
 emit changes;
 
 -- Initiate to get data to stream table:
-select * from stream_table;
+select * from stream_table where amount>0 emit changes;
 
 -- Insert data to stream table: 
 insert into stream_table (step, tipe, amount, nameOrig, oldbalanceOrg, newbalanceOrig, nameDest, oldbalanceDest, newbalanceDest, isFraud) values (1, 'PAYMENT', 9839.63, 'C1231006815', 170131, 160296.32, 'M1979787155', 0, 0, 0);
